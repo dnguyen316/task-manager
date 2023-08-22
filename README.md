@@ -7,7 +7,6 @@ TaskMagnet is a user-friendly web-based task manager application that allows you
 - **User Authentication**: Register and log in to manage your tasks securely.
 - **Task Management**: Create, read, update, and delete tasks with ease.
 - **Real-time Updates**: Experience real-time task updates using Firebase Firestore.
- Functions.
 - **Responsive UI**: Enjoy a visually appealing and responsive user interface.
 
 ## Technologies Used

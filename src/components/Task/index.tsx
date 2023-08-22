@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export interface ITaskProps {
   data: TaskType;
-  onClick: (e: React.MouseEvent) => void;
+  onClick?: (e: React.MouseEvent) => void;
   isEdit?: boolean;
   colIndex: number;
 }

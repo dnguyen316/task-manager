@@ -25,7 +25,7 @@ const userReducer = (state = defaultState, action: typeof UserTypes) => {
     case UserTypes.REGISTER:
       return {
         ...state,
-        isLoading: true
+        isLoading
       }
     case UserTypes.REGISTER_SUCCESS:
       return {

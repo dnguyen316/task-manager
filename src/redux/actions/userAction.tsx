@@ -4,7 +4,7 @@ const { Types, Creators } = createActions({
   login: ['isLoading'],
   loginSuccess: ['user'],
   signOut: [''],
-  register: [''],
+  register: ['isLoading'],
   registerSuccess: [''],
 });
 export const UserTypes = Types;

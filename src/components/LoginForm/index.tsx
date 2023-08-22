@@ -31,7 +31,6 @@ function LoginForm() {
   const getGetUserInfo = async () => {
     try {
       const userInfo: User | unknown = await UserServices.login(formData);
-
       if(userInfo && Object.keys(userInfo).length > 0) {
         dispatch(UserActions.loginSuccess(userInfo));
         UserServices.saveCurrentUser(userInfo, process.env.REACT_APP_ENCRYPTION_KEY || '');
@@ -39,7 +38,7 @@ function LoginForm() {
   
       }
     }catch(err) {
-      console.log("~err",err)
+      throw err
     }
   }
 

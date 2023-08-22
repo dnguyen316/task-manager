@@ -18,18 +18,17 @@ export interface IRegisterFormProps {
 }
 
 const RegisterForm = (props: IRegisterFormProps) => {
-
+  
+  const dispatch = useDispatch();
   const { onToggleForm } = props
   const { formData, handleChangeFormData : handleChange} = useForm(initialRegisterFormState)
-
-  const dispatch = useDispatch();
 
   const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     // Register User to Firebase
     try{
-      dispatch(UserActions.register());
+      dispatch(UserActions.register(true));
       const newUser = await UserServices.registerUser({
         email: formData.email,
         password: formData.password
@@ -37,9 +36,9 @@ const RegisterForm = (props: IRegisterFormProps) => {
   
       if(newUser) {
         dispatch(UserActions.registerSuccess());
-        console.log("~register successed!", newUser);
       }
     }catch(error) {
+      dispatch(UserActions.register(false));
       throw error;
     }
   };

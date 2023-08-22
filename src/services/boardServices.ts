@@ -63,6 +63,7 @@ const BoardServices = {
 
   createAndSaveBoard: async (newBoard: Board) => {
     try {
+      debugger;
       // Create the board object
       const boardData: Board = {
         id: newBoard.id,
@@ -72,7 +73,6 @@ const BoardServices = {
         columns: newBoard.columns || [],
         isSelected: newBoard.isSelected,
       };
-
       // Add the new board to Firestore
       // await addDoc(collection(db, 'boards'), boardData);
 
@@ -107,7 +107,7 @@ const BoardServices = {
       // Reference the board document
       const { boardId, updatedBoard, userUID } = params;
       const boardRef = doc(db, 'boards', boardId);
-
+      debugger;
       // Update the board document with the updated data and set isSelected to true
       await updateDoc(boardRef, {
         name: updatedBoard.name,

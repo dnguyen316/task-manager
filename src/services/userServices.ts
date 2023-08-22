@@ -25,7 +25,7 @@ const UserServices = {
         email: user.email,
       };
     } catch (error) {
-      return error; // Rethrow the error for handling in the component
+      throw error; // Rethrow the error for handling in the component
     }
   },
 
@@ -49,7 +49,7 @@ const UserServices = {
         email: user.email,
       };
     } catch (error) {
-      return error; // Rethrow the error for handling in the component
+      throw error; // Rethrow the error for handling in the component
     }
   },
 
@@ -61,7 +61,7 @@ const UserServices = {
       })
       .catch((error) => {
         // An error happened.
-        console.log(error);
+        throw error;
       });
   },
 

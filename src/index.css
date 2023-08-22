@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +14,57 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@layer components {
+  /* BUTTON */
+  .button {
+    @apply bg-sky-500 py-2 px-4 rounded-full text-white text-lg font-semibold hover:opacity-80 duration-200
+  }
+
+  /* CARD */
+  .card {
+    @apply bg-white py-6 px-3 my-6 rounded-lg w-[280px] min-h-[208px] shadow-md shadow-gray-300 hover:shadow-lg duration-200 cursor-pointer active:shadow-gray-400 hover:text-sky-500 active:text-sky-400
+  }
+
+  .card-title {
+    @apply font-bold text-xl mb-3 line-clamp-1 tracking-wide min-h-[28px]
+  }
+  
+  .card-description {
+    @apply text-lg mb-3 line-clamp-3 text-gray-700 min-h-[84px]
+  }
+
+  .card-due-date {
+    @apply text-right italic tracking-wide text-gray-700 font-semibold
+  }
+
+  .board-tag-selected {
+    @apply bg-sky-500 text-white hover:text-sky-500 hover:bg-sky-100
+  }
+
+  /* INPUT */
+  .form-header {
+    @apply mb-4 text-2xl font-medium text-gray-900
+  }
+  .form-input {
+    @apply bg-white border border-gray-300 text-base text-gray-900 rounded-lg focus:ring-sky-500 focus:outline-sky-500 block w-full p-2.5
+  }
+  
+  .form-label {
+    @apply block mb-2 text-lg font-medium text-gray-900
+  }
+
+  /* BOARD TAG */
+  .board-tag {
+    @apply flex items-center mr-10 h-16 rounded-e-full pl-4 cursor-pointer hover:text-sky-500 hover:bg-sky-100 duration-200
+  }
+  
+  .board-tag-img {
+    @apply w-4 text-white mr-3
+  }
+
+  .board-tag-name {
+    @apply text-xl font-semibold
+  }
 }
